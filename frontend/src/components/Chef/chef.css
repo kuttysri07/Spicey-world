@@ -6,6 +6,7 @@
     position: relative;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
    
 }
 
@@ -14,7 +15,6 @@
 }
 
 .right{
-   
     flex-basis: 50%;
 }
 
@@ -42,4 +42,86 @@ svg{
 
 center h1{
     margin-top: 40px;
+}
+
+@media (max-width: 1200px) {
+    
+
+    .right h1 {
+        font-size: 3.5rem;
+    }
+
+    .right p {
+        font-size: 1.1rem;
+    }
+
+    svg {
+        position: absolute;
+        width: 400px; /* Reduce SVG size */
+        left: 0%;
+        top: 20%;
+    }
+
+    .chef {
+        position: absolute;
+        width: 250px; /* Reduce chef image size */
+        left: 10%;
+        top: 15%;
+    }
+}
+
+@media (max-width: 768px) {
+    .chefcontainer {
+        flex-direction: column; /* Stack content vertically */
+        height: auto; /* Allow content to dictate height */
+        gap: 5%;
+    }
+
+    .left, .right {
+        flex-basis: 100%;
+        text-align: center; /* Center-align text */
+    }
+
+    .right h1 {
+        font-size: 2.5rem;
+       
+    }
+
+    .right p {
+        font-size: 1rem;
+        padding: 0px 20px;
+    }
+
+    svg {
+        position: relative; /* Change SVG position */
+        width: 350px;
+        left: 0%;
+        top: 0;
+        margin: 0 auto; /* Center SVG */
+    }
+
+    .chef {
+        position: absolute;
+        width: 200px;
+        right: 10%;
+        top: 0;
+        margin: 0 auto; /* Center chef image */
+    }
+}
+
+@media (max-width: 480px) {
+
+   .left svg{
+    position: relative;
+    top: 0;
+    left: 0%;
+    width: 350px;
+   }
+
+   .right p{
+    padding: 10px;
+    font-size: 1rem;
+   }
+
+   
 }

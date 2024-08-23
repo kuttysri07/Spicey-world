@@ -51,11 +51,13 @@ input{
     width: 100%;
     padding: 10px;
     border-radius: 50px;
+    margin-bottom: 20px;
 }
 
 textarea{
     height: 100px;
     border-radius: 10px;
+    width: 100%;
 }
 
 button{
@@ -73,4 +75,51 @@ button{
     width: 600px;
     left: 0%;
     border-radius: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .contactleft, .contactright {
+        
+        flex-basis: 45%; /* Adjust flex basis for medium screens */
+    }
+
+    .contactleft h1 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contactcontainer {
+        flex-direction: column; /* Stack elements vertically */
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .contactleft, .contactright {
+        flex-basis: 100%; /* Full width for each section */
+        margin-bottom: 20px; /* Add space between sections */
+    }
+
+    .contactleft h1 {
+        font-size: 1.5rem;
+    }
+
+    .bbq {
+        width: 100%; /* Make SVG image responsive */
+        left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .contactleft h1 {
+        font-size: 1.2rem;
+    }
+
+    .contactleft h2, .contactleft h3 {
+        font-size: 0.9rem;
+    }
+
+    .bbq {
+        width: 100%; /* Ensure the background is responsive */
+    }
 }

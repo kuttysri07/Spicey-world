@@ -1,4 +1,4 @@
-.nav{
+nav{
     height: 10vh;
     width: 100%;
     display: flex;
@@ -8,6 +8,7 @@
     position:fixed;
     z-index: 99;
    color: white;
+   
    
 }
 
@@ -43,4 +44,49 @@ ul li {
     padding-bottom: 12px;
     border-bottom: 3px solid;
     
+}
+
+.menu{
+    width: 30px;
+    visibility: hidden;
+}
+
+
+@media (max-width:750px){
+    .menu{
+        position: absolute;
+        visibility: visible;
+        left: 5%;
+        width: 25px;
+        z-index: 99;
+       
+    }
+
+
+    nav ul{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        background-color: black;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        height: 100vh;
+        padding: 10px;
+        padding-top: 50px;
+        width: 200px;
+        transition: all 0.5s ease-in-out;
+        
+    }
+
+    .hidemenu{
+        right: -100%;
+    }
+
+    nav ul li{
+        margin-bottom: 30px;
+    }
+
+
 }

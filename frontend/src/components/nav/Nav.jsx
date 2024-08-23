@@ -1,11 +1,13 @@
 import "./Nav.css"
 import bag from "../Assets/bag.png"
 import { useState ,useEffect} from "react"
+import menu from "../Assets/menu.png"
 
 const Nav = () => {
 
     const[active, setActive] = useState("Home");
     const [bgcolor,setBgcolor]=useState(false);
+   
 
     useEffect(()=>{
       window.addEventListener("scroll",()=>{
@@ -14,10 +16,21 @@ const Nav = () => {
       })
     },[])
 
+    
+  const [mobilemenu,setmobilemenu]=useState(false)
+
+  function menutoggle(){
+    mobilemenu? setmobilemenu(false):setmobilemenu(true);
+    
+  }
+
+    
+
   return (
-    < div className="nav"  style={bgcolor ? {backgroundColor:"black"}:{backgroundColor:"transparent"}}>
+    < nav className="nav"   style={bgcolor ? {backgroundColor:"black"}:{backgroundColor:"black"}}>
+      <img src={menu} className="menu" alt="" onClick={menutoggle} />
     <h1 className="logo"> <span>Spicy</span>World</h1>
-    <ul>
+    <ul className={mobilemenu ? "":'hidemenu'}>
        <li onClick={()=>setActive("Home") }   className={active==="Home"?"txtcolor": null} >Home</li>
        <li onClick={()=>setActive("Special") }   className={active === "Special"?"txtcolor": null}>Special</li>
        <li onClick={()=>setActive("Chef") }   className={active ==="Chef"?"txtcolor": null}>Chef</li>
@@ -26,7 +39,7 @@ const Nav = () => {
     </ul>
 
     <img className="bagimg" src={bag} alt="" />
-    </div>
+    </nav>
   )
 }
 

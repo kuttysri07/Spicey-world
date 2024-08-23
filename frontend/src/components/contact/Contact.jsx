@@ -1,7 +1,34 @@
 import "./contact.css"
-
+import React from "react"
 
 const Contact = () => {
+
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "caad4672-701d-4d09-8578-132aa163f2c6");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
+
+
   return (
     <div >
       <center> <h1> Contact us </h1></center> 
@@ -18,12 +45,16 @@ const Contact = () => {
            
         </div>
         <div className='contactright'>
-            <input type="text" placeholder='Enter Full Name'/>
-            <input type="text"  placeholder='Enter Mobile Number'/>
-            <input type="text" name="" id="" placeholder='Email Address' />
-            <textarea name="" id="" placeholder='Enter Your Address'></textarea>
+          <form onSubmit={onSubmit}>
+            <input type="text" name="Name" placeholder='Enter Full Name'/>
+            <input type="text" name="Mobile Number"  placeholder='Enter Mobile Number'/>
+            <input type="text" name="Email" id="" placeholder='Email Address' />
+            <textarea name="Address" placeholder='Enter Your Address'></textarea>
             <button>Submit</button>
+            </form>
+            <span>{result}</span>
         </div>
+       
     </div>
     </div>
   )

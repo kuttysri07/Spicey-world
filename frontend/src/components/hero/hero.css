@@ -36,3 +36,65 @@
     background-color: red;
     color: white;
 }
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .content h1 {
+        font-size: 4rem;
+        padding: 40px;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+        padding:0px 40px;
+    }
+    .content button {
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 70vh; /* Adjust height for tablets */
+    }
+
+    .content h1 {
+        font-size: 3rem;
+        padding: 30px;
+    }
+
+    .content p {
+        font-size: 1rem;
+        padding: 0px 30px;
+    }
+
+    .content button {
+        padding: 8px 16px;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh; /* Adjust height for mobile */
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+        padding: 30px;
+        margin-top: 30px;
+    }
+
+    .content p {
+        font-size: .8rem;
+        padding: 0px 30px;
+    }
+
+    .content button {
+        padding: 6px 12px;
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+}

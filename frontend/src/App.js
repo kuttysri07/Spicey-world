@@ -15,8 +15,6 @@ const App = () => {
       <Nav/>
       <Routes>
             <Route path="/" element={<Hero />} />
-
-
       </Routes>
       <Special/>
       <Chef/>
