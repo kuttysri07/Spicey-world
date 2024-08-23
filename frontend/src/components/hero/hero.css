@@ -1,0 +1,38 @@
+.hero{
+    height: 80vh;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.432),rgba(0, 0, 0, 0.623)),url(../Assets/pexels-pixabay-53148.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content{
+    position: absolute;
+    color: white;
+}
+
+.content h1{
+    font-size: 4.5rem;
+}
+
+.content p{
+    font-size: 1.1rem;
+}
+
+.content button{
+    margin-top: 50px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    transition: all .5s;
+}
+
+.content button:hover{
+    background-color: red;
+    color: white;
+}

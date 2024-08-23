@@ -1,0 +1,76 @@
+.contactcontainer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contactleft{
+    height: 60vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.275),rgba(0, 0, 0, 0.588)),url(../Assets/bbq.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    flex-basis: 40%;
+    border-radius: 50px;
+    position: relative;
+}
+
+
+.contactleft h1{
+    font-size: 2rem;
+    padding-top: 30px;
+    color: red;
+    
+}
+
+.contactleft h2{
+    font-size: 1rem;
+    padding-top: 30px;
+}
+
+.contactleft h3{
+    font-size: 1rem;
+    padding-top: 30px;
+}
+
+.contactright{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    flex-basis: 40%;
+}
+
+input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+textarea{
+    height: 100px;
+    border-radius: 10px;
+}
+
+button{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: black;
+    color: white;
+    
+}
+
+.bbq{
+    position: absolute;
+    z-index: -1;
+    width: 600px;
+    left: 0%;
+    border-radius: 20px;
+}

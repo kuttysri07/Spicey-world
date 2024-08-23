@@ -1,0 +1,46 @@
+.nav{
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 10px;
+    align-items: center;
+    position:fixed;
+    z-index: 99;
+   color: white;
+   
+}
+
+span{
+    color: red;
+}
+
+.logo{
+    cursor: pointer;
+}
+
+ul li {
+    display: inline;
+    padding: 0px 20px;
+    cursor: pointer;
+    color: white;
+ 
+}
+
+
+
+.bagimg{
+    width: 30px;
+    cursor: pointer;
+    padding: 5px;
+    background-color:white;
+    border-radius: 50%;
+}
+
+.txtcolor{
+    color: red;
+    font-weight: 500;
+    padding-bottom: 12px;
+    border-bottom: 3px solid;
+    
+}

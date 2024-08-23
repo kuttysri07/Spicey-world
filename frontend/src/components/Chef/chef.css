@@ -1,0 +1,45 @@
+.chefcontainer{
+    display: flex;
+    height: 70vh;
+    width: 100%;
+    gap: 15%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.left{
+    flex-basis: 30%;
+}
+
+.right{
+   
+    flex-basis: 50%;
+}
+
+.right h1{
+    font-size: 4rem;
+}
+
+.right p{
+    font-size: 1.2rem;
+}
+
+svg{
+    position: absolute;
+    width: 500px;
+    left: 5%;
+    top: 0;
+}
+
+.chef{
+    position:absolute;
+    width: 300px;
+    left: 13%;
+    top: 0%;
+}
+
+center h1{
+    margin-top: 40px;
+}
