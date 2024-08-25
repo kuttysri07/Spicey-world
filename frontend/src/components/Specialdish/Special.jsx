@@ -30,7 +30,7 @@ const Special = () => {
                     <div className="cardcontainer" key={index}>
                         <img
                             className="bbqimg"
-                            src={`${API_URL}/${dish.image}`}
+                            src={dish.image}
                             alt={dish.name}
                         />
                         <div className="details">
