@@ -7,7 +7,8 @@ nav{
     align-items: center;
     position:fixed;
     z-index: 99;
-   color: white;
+    color: white;
+    top: 0;
    
    
 }
@@ -40,11 +41,12 @@ ul li {
 
 .txtcolor{
     color: red;
-    font-weight: 500;
+    font-weight: 600;
     padding-bottom: 12px;
-    border-bottom: 3px solid;
-    
+    border-bottom: 3px solid; 
+    font-size:1rem;
 }
+
 
 .menu{
     width: 30px;

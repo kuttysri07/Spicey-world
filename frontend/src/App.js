@@ -7,20 +7,28 @@ import Chef from './components/Chef/Chef.jsx'
 import Contact from './components/contact/Contact.jsx'
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Dishes from './components/Dishes/Dishes.jsx'
 
 const App = () => {
   return (
-    <Fragment>
-       <BrowserRouter>
+   <Fragment>
+      <BrowserRouter>
       <Nav/>
       <Routes>
-            <Route path="/" element={<Hero />} />
+            <Route path="/" element={
+               <Fragment>
+                    <Hero />  
+                    <Special/>
+                    <Chef/>
+                    <Contact/>
+              </Fragment>} />
+              
+            <Route path="/dishes/:category" element={<Dishes />} />
       </Routes>
-      <Special/>
-      <Chef/>
-      <Contact/>
+    
       </BrowserRouter>
-    </Fragment>
+   
+      </Fragment>
     
     
   )

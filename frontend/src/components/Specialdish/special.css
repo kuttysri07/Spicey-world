@@ -2,7 +2,7 @@
     padding: 30px ;
 }
 
-.container{
+.democontainer{
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
@@ -11,82 +11,45 @@
     margin-top: 50px;
 }
 
-.cardcontainer{
-    height: 400px;
+.democardcontainer{
+    height: 200px;
     width: 300px;
     background: linear-gradient(rgba(0, 0, 0, 0.956),rgba(0, 0, 0, 0.781));
     border-radius: 20px;
     text-align: center;
     position: relative;
     margin-bottom: 70px;
-    padding: 5px;
+    padding: 20px;
     color: white;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;;
+    cursor: pointer;
 }
 
-.cardcontainer h1{
-    font-size: 1.5rem;
-    margin-top: 30px;
+a{
+    text-decoration: none;
 }
-.cardcontainer p{
+
+.democardcontainer h1{
+    font-size: 1.5rem;
+    margin-top:10px;
+}
+.democardcontainer p{
     font-size: 1rem;
 }
 
-.cardcontainer button{
+.democardcontainer button{
     padding: 5px 20px;
     border: none;
     border-radius: 20px;
     transition: all .5s;
 }
-.cardcontainer button:hover{
+.democardcontainer button:hover{
     background-color: red;
     color: white;
 }
 
 
-.bbqimg{
-    position: absolute;
-    width: 200px;
-    left: 17%;
-    top: -20%;
+.demobbqimg{
+    width: 150px;
 }
 
-.details{
-    padding-top: 100px;
-}
-
-
-
-/* ratings */
-.rating-outer {
-    position: relative;
-    display: inline-block;
-    font-size: 20px; /* Adjust size as needed */
-    color: #ccc; /* Outer star color (inactive stars) */
-}
-
-.rating-inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0; /* Will be controlled dynamically via inline style */
-    white-space: nowrap;
-    overflow: hidden;
-    color: #f8ce0b; /* Inner star color (active stars) */
-}
-
-.rating-outer::before {
-    content: "★★★★★"; /* Adjust number of stars as needed */
-    color: inherit;
-}
-
-.rating-inner::before {
-    content: "★★★★★"; /* Same number of stars as above */
-    color: inherit;
-}
-
-
-.more{
-    background-color: red;
-    font-weight: 500;
-}

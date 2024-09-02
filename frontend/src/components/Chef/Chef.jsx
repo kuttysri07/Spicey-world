@@ -3,7 +3,7 @@ import "./chef.css"
 
 const Chef = () => {
   return (
-    <div >
+    <div id="chef">
         <center><h1>Meet our Chefs</h1></center>
         <div className="chefcontainer">
                 <div className='left'>

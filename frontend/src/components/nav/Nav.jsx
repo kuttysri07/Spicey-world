@@ -1,46 +1,111 @@
-import "./Nav.css"
-import bag from "../Assets/bag.png"
-import { useState ,useEffect} from "react"
-import menu from "../Assets/menu.png"
+import "./Nav.css";
+import bag from "../Assets/bag.png";
+import { useState, useEffect } from "react";
+import menu from "../Assets/menu.png";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink, useLocation } from "react-router-dom"; // Import both Link components
 
 const Nav = () => {
+  const [bgcolor, setBgcolor] = useState(false);
+  const [mobilemenu, setMobilemenu] = useState(false);
+  const location = useLocation(); // Get the current route
 
-    const[active, setActive] = useState("Home");
-    const [bgcolor,setBgcolor]=useState(false);
-   
+  useEffect(() => {
+    const handleScroll = () => {
+      setBgcolor(window.scrollY > 50 || location.pathname.startsWith('/dishes/')); // Adjust based on route and scroll position
+    };
 
-    useEffect(()=>{
-      window.addEventListener("scroll",()=>{
-        window.scrollY > 50 ? setBgcolor(true) : setBgcolor(false)
-  
-      })
-    },[])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [location.pathname]); // Re-run effect on route change
 
-    
-  const [mobilemenu,setmobilemenu]=useState(false)
+  const menutoggle = () => {
+    setMobilemenu(!mobilemenu);
+  };
 
-  function menutoggle(){
-    mobilemenu? setmobilemenu(false):setmobilemenu(true);
-    
-  }
-
-    
+  // Determine which Link component to use
+  const isDishesPage = location.pathname.startsWith('/dishes/');
 
   return (
-    < nav className="nav"   style={bgcolor ? {backgroundColor:"black"}:{backgroundColor:"black"}}>
-      <img src={menu} className="menu" alt="" onClick={menutoggle} />
-    <h1 className="logo"> <span>Spicy</span>World</h1>
-    <ul className={mobilemenu ? "":'hidemenu'}>
-       <li onClick={()=>setActive("Home") }   className={active==="Home"?"txtcolor": null} >Home</li>
-       <li onClick={()=>setActive("Special") }   className={active === "Special"?"txtcolor": null}>Special</li>
-       <li onClick={()=>setActive("Chef") }   className={active ==="Chef"?"txtcolor": null}>Chef</li>
-       <li onClick={()=>setActive("Clients") }   className={active ==="Clients"?"txtcolor": null}>Clients</li>
-       <li onClick={()=>setActive("Contact Us") }   className={active ==="Contact Us" ?"txtcolor": null}>Contact Us</li>
-    </ul>
-
-    <img className="bagimg" src={bag} alt="" />
+    <nav className="nav" style={{ backgroundColor: bgcolor ? "black" : "transparent" , display:isDishesPage ?"none":""}} >
+      <img src={menu} className="menu" alt="Menu" onClick={menutoggle} />
+      <h1 className="logo">
+        <span>Spicy</span>World
+      </h1>
+      <ul className={mobilemenu ? "" : "hidemenu"}>
+        <li>
+            <ScrollLink
+              to="hero"
+              spy={true}
+              smooth={true}
+              offset={-60}
+              duration={500}
+              activeClass="txtcolor"
+            >
+              Home
+            </ScrollLink>
+          
+        </li>
+        <li>
+          
+            <ScrollLink
+              to="special"
+              spy={true}
+              smooth={true}
+              offset={-60}
+              duration={500}
+              activeClass="txtcolor"
+            >
+              Special
+            </ScrollLink>
+          
+        </li>
+        <li>
+          
+            <ScrollLink
+              to="chef"
+              spy={true}
+              smooth={true}
+              offset={-60}
+              duration={500}
+              activeClass="txtcolor"
+            >
+              Chef
+            </ScrollLink>
+          
+        </li>
+        <li>
+         
+            <ScrollLink
+              to="clients"
+              spy={true}
+              smooth={true}
+              offset={-60}
+              duration={500}
+              activeClass="txtcolor"
+            >
+              Clients
+            </ScrollLink>
+          
+        </li>
+        <li>
+         
+            <ScrollLink
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={-60}
+              duration={500}
+              activeClass="txtcolor"
+            >
+              Contact Us
+            </ScrollLink>
+          
+        </li>
+      </ul>
+      <img className="bagimg" src={bag} alt="Bag" />
     </nav>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
