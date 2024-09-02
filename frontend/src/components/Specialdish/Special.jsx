@@ -51,28 +51,28 @@ const Special = () => {
                 <h1 className="heading">Our Special Dishes</h1>
             </center>
             <div className="democontainer">
-                <Link to={"/dishes/Chicken"}>
+                <Link to={"/Chicken"}>
                     <div className="democardcontainer">
                         <img className="demobbqimg" src={chicken} alt="" />
                         <h1>chicken</h1>
                     </div>
                 </Link>
                 
-                <Link to={"/dishes/HotDog"}>
+                <Link to={"/HotDog"}>
                     <div className="democardcontainer">
                         <img  className="demobbqimg" src={hotdog} alt="" />
                         <h1>hotdog</h1>
                     </div>
                 </Link>
                 
-                <Link to={"/dishes/Burger"}>
+                <Link to={"/Burger"}>
                     <div className="democardcontainer">
                         <img  className="demobbqimg" src={burger} alt="" />
                         <h1>Burger</h1>
                     </div>
                 </Link>
                
-                <Link to={"/dishes/Barbeque"}>
+                <Link to={"/Barbeque"}>
                     <div className="democardcontainer">
                         <img className="demobbqimg" src={barbeque} alt="" />
                         <h1>barbeque</h1>

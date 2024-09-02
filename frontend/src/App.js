@@ -23,7 +23,7 @@ const App = () => {
                     <Contact/>
               </Fragment>} />
               
-            <Route path="/dishes/:category" element={<Dishes />} />
+            <Route path="/:category" element={<Dishes />} />
       </Routes>
     
       </BrowserRouter>
