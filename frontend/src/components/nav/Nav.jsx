@@ -3,7 +3,11 @@ import bag from "../Assets/bag.png";
 import { useState, useEffect } from "react";
 import menu from "../Assets/menu.png";
 import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink, useLocation } from "react-router-dom"; // Import both Link components
+import { useLocation } from "react-router-dom"; // For detecting the current path
+
+import { auth} from "../firebase";
+
+
 
 const Nav = () => {
   const [bgcolor, setBgcolor] = useState(false);
@@ -23,11 +27,24 @@ const Nav = () => {
     setMobilemenu(!mobilemenu);
   };
 
+  const hideNavOnRoutes = ["/"];
   // Determine which Link component to use
-  const isDishesPage = location.pathname.startsWith('/dishes/');
+  const shouldHideNav = location.pathname.startsWith('/dishes/') || hideNavOnRoutes.includes(location.pathname) ;
+
+    const handleLogout = async () =>{
+      try {
+        await auth.signOut();
+        window.location.href="/"
+      } catch (error) {
+        console.log(error.message)
+      }
+       
+
+    }
+  
 
   return (
-    <nav className="nav" style={{ backgroundColor: bgcolor ? "black" : "transparent" , display:isDishesPage ?"none":""}} >
+    <nav className="nav" style={{ backgroundColor: bgcolor ? "black" : "transparent" , display:shouldHideNav ?"none":""}} >
       <img src={menu} className="menu" alt="Menu" onClick={menutoggle} />
       <h1 className="logo">
         <span>Spicy</span>World
@@ -101,6 +118,11 @@ const Nav = () => {
               Contact Us
             </ScrollLink>
           
+        </li>
+
+
+        <li style={{color:"red"}} onClick={handleLogout}>
+          Logout
         </li>
       </ul>
       <img className="bagimg" src={bag} alt="Bag" />

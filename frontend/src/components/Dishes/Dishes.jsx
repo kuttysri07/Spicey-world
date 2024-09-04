@@ -55,7 +55,7 @@ const Dishes = () => {
                   
                 </div>
 
-               <center> <Link to="/"><button >Back</button></Link> </center> 
+               <center> <Link to="/hero"><button >Back</button></Link> </center> 
     </div>
   )
 }

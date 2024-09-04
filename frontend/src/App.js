@@ -8,6 +8,7 @@ import Contact from './components/contact/Contact.jsx'
 
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Dishes from './components/Dishes/Dishes.jsx'
+import Login from './components/Login/login.jsx'
 
 const App = () => {
   return (
@@ -15,7 +16,8 @@ const App = () => {
       <BrowserRouter>
       <Nav/>
       <Routes>
-            <Route path="/" element={
+      <Route path="/" element={<Login />} />
+            <Route path="/hero" element={
                <Fragment>
                     <Hero />  
                     <Special/>
